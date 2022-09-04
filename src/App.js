@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import UserList from "./component/UserList";
+import FormLayout from "./component/FormLayout";
+import EditForm from "./features/users/EditForm";
+// import NewFrorm from "./component/NewFrorm";
+// import Sau from "./component/Sau";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mx-auto px-2 max-w-7xl pt-10 md-pt-32">
+      <h1 className="text-center font-bold text-2xl  text-gray-700">
+        {" "}
+        CRUD Operation with Redux Toolkit
+      </h1>
+
+      <Routes>
+        {/* <Route path="/" element={<Card />} /> */}
+        <Route path="/" element={<UserList />} />
+
+        <Route path="/add-user" element={<FormLayout />} />
+
+        {/* <Route path="/add-user" element={<Adduser />} /> */}
+        <Route path="/edit-user/:id" element={<EditForm />} />
+        {/* <Route path="/edit-user/:id" element={<EditUser />} /> */}
+      </Routes>
     </div>
   );
 }
